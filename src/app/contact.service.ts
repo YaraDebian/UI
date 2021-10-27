@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { retry, catchError } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { catchError } from 'rxjs/operators';
 import { Observable, throwError} from 'rxjs';
 import { Contact } from './Models/Contact';
 

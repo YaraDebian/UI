@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Contact } from '../Models/Contact';
 import { ContactService } from '../contact.service';
 import { FormControl, FormGroup, Validators} from '@angular/forms';

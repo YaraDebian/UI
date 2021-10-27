@@ -1,10 +1,8 @@
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ContactService } from '../contact.service';
 import { LogService } from '../log.service';
 import { Contact } from '../Models/Contact';
 import { Log } from '../Models/Log';
-import { DxDataGridModule, DxButtonModule } from 'devextreme-angular';
-
 
 @Component({
   selector: 'app-show-contact',
@@ -22,6 +20,7 @@ export class ShowContactComponent implements OnInit{
   showLogs: boolean = false;
   phoneNumber: any;
   firstName : any;
+  
   constructor(private contactService: ContactService, private logsService: LogService) { }
 
   ngOnInit(): void {
