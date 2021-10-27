@@ -1,0 +1,24 @@
+<p *ngIf="!hasLogs">No logs to display</p>
+<table class="table table striped" *ngIf="hasLogs">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Contact Id</th>
+            <th>Field</th>
+            <th>Previous Value</th>
+            <th>New Value</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of logs">
+            <td>{{data.Id}}</td>
+            <td>{{data.ContactId}}</td>
+            <td>{{data.Field}}</td>
+            <td>{{data.Previous}}</td>
+            <td>{{data.New}}</td>
+            <td>{{data.Date}}</td>
+        </tr>
+    </tbody>
+</table>
+
