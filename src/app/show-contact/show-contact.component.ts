@@ -37,12 +37,14 @@ export class ShowContactComponent implements OnInit{
     }
     this.ModalTitle = "Add Contact";
     this.AddOrEdit =  true;
+    this.refreshContacts();
   }
 
   editClick(item: any){
     this.contact = item;
     this.ModalTitle = "Edit Contact";
     this.AddOrEdit = true;
+    this.refreshContacts();
   }
 
   deleteClick(item: Contact){

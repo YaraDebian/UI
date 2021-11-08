@@ -42,6 +42,7 @@ export class AddEditContactComponent implements OnInit {
     get PhoneNumber(){return this.addOrEdit.get('phoneNumber')}
     
     addContact(event: any){
+      this.isValid = false;
       var newContact = new Contact();
       newContact.Id = this.contactId;
       newContact.FirstName = this.firstName;
@@ -58,14 +59,21 @@ export class AddEditContactComponent implements OnInit {
     }
 
     updateContact(event: any){
+      this.isValid = false;
       var contact = new Contact();
       contact.Id = this.contactId;
       contact.FirstName = this.firstName;
       contact.LastName = this.lastName;
       contact.Email = this.email;
       contact.PhoneNumber = this.phoneNumber;
-      this.service.updateContact(contact.Id, contact).subscribe();
-      location.reload();
+      debugger
+      this.validate();
+      if(this.isValid && contact.PhoneNumber != 0)
+      {
+        this.service.updateContact(contact.Id, contact).subscribe();
+        location.reload();
+      }
+      else alert("Please fill all the required fields.")
     }
 
     validate(){
